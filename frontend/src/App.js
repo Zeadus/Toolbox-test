@@ -17,7 +17,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("?");
     const timeOutId = setTimeout(() => filesData.refetch(), 1000);
     return () => clearTimeout(timeOutId);
   }, [filter]);

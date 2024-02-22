@@ -6,7 +6,6 @@ const getFileList = async (filter) => {
     const files = request.data.files;
 
     if (filter) {
-      console.log("filter", filter);
       const fileSearch = files.find((file) => file === filter);
       if (fileSearch) {
         return [fileSearch];

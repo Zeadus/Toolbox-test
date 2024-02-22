@@ -5,9 +5,7 @@ const getFilesData = async (filter) => {
   try {
     const files = await getFileList(filter);
     let apiCalls = [];
-    console.log(files);
     for (const file of files) {
-      console.log(file);
       apiCalls.push(api.get(`/file/${file}`));
     }
 
@@ -20,7 +18,6 @@ const getFilesData = async (filter) => {
         const text = file.value.data;
 
         const lines = text.split("\n");
-        console.log(lines);
         // First line is the header
         // Check that every line has 4 values to make sure the file is formatted correctly
         // I'm asuming the data is coming correctly when there is 4 values in a line, not validating hex
